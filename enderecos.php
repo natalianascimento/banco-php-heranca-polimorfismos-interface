@@ -7,8 +7,8 @@ require_once 'autoload.php';
 $umEndereco = new Endereco('Petrópolis', 'Qualquer', 'Minha Rua', '144');
 $outroEndereco = new Endereco('Rio', 'Centro', 'Uma Rua', '50');
 
-echo $umEndereco->cidade;
-exit();
+$umEndereco->cidade = "Florianópolis";
 
 echo $umEndereco . PHP_EOL;
+exit();
 echo $outroEndereco;

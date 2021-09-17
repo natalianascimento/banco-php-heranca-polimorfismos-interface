@@ -9,8 +9,9 @@ namespace Alura\Banco\Modelo;
  * @property-read string $rua
  * @property-read string $numero
  */
-class Endereco
+final class Endereco
 {
+    use AcessoPropriedades;
     private $cidade;
     private $bairro;
     private $rua;
@@ -49,9 +50,8 @@ class Endereco
         return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
     }
 
-    public function __get(string $nomeAtributo)
+    public function __set($nomeAtributo, $valor)
     {
-        $metodo = 'recupera' . ucfirst($nomeAtributo);
-        return $this->$metodo();
-    }
+        return $this->$nomeAtributo = $valor;
+    }    
 }
